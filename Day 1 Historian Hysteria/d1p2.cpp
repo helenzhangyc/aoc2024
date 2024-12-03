@@ -13,24 +13,27 @@ int main()
     if (newfile.is_open())
     {
         string line;
-        vector<int> dist1;
-        vector<int> dist2;
+        vector<int> left;
+        vector<int> right;
         while (getline(newfile, line))
         {
             istringstream ss(line);
             int num1, num2;
             ss >> num1 >> num2;
-            dist1.push_back(num1);
-            dist2.push_back(num2);
+            left.push_back(num1);
+            right.push_back(num2);
         }
-        sort(dist1.begin(), dist1.end());
-        sort(dist2.begin(), dist2.end());
 
-        int n = dist1.size();
+        unordered_map<int, int> freq;
+        int n = left.size();
+        for (int i = 0; i < n; ++i) {
+            freq[right[i]]++;
+        }
+
         int sum = 0;
         for (int i = 0; i < n; ++i)
         {
-            sum += abs(dist1[i] - dist2[i]);
+            sum += freq[left[i]] * left[i];
         }
         cout << sum << endl;
     }
