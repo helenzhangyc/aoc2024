@@ -5,6 +5,7 @@
 #include <sstream>
 #include <algorithm>
 #include <regex>
+#include <queue>
 using namespace std;
 
 vector<int> splitByComma(string& str) {
@@ -19,7 +20,45 @@ vector<int> splitByComma(string& str) {
     return result;
 }
 
+vector<int> topological_sort(vector<int>& number_list, unordered_map<int, vector<int>>& number_order) {
+    unordered_map<int, int> in_degree;
+    unordered_map<int, vector<int>> graph;
 
+    for (int num : number_list) {
+        in_degree[num] = 0;
+    }
+    for (int num : number_list) {
+        if (number_order.find(num) != number_order.end()) {
+            for (int neighbour : number_order[num]) {
+                if (in_degree.find(neighbour) != in_degree.end()) {
+                    graph[num].push_back(neighbour);
+                    in_degree[neighbour]++;
+                }
+            }
+        }
+    }
+
+    queue<int> q;
+    for (auto& [node, degree] : in_degree) {
+        if (degree == 0) {
+            q.push(node);
+        }
+    }
+
+    vector<int> sorted_order;
+    while (!q.empty()) {
+        int node = q.front();
+        q.pop();
+        sorted_order.push_back(node);
+        for (int neighbour : graph[node]) {
+            in_degree[neighbour]--;
+            if (in_degree[neighbour] == 0) {
+                q.push(neighbour);
+            }
+        }
+    }
+    return sorted_order;
+}
 
 int main()
 {
@@ -42,9 +81,6 @@ int main()
                 number_order[first].push_back(second);
             } else {
                 vector<int> number_list = splitByComma(line);
-                // for each item n in list, check if any numbers prior to n are in number_order[n]
-                // if there exists any, the line is invalid
-                // if the line is valid, add the middle number into sum
                 int n = number_list.size();
                 bool valid = true;
                 for (int i = 0; i < n; ++i) {
@@ -55,9 +91,13 @@ int main()
                             break;
                         }
                     }
+                    if (!valid) {
+                        break;
+                    }
                 }
-                if (valid) {
-                    sum += number_list[n / 2];
+                if (!valid) {
+                    vector<int> new_number_list = topological_sort(number_list, number_order);
+                    sum += new_number_list[n / 2];  
                 }
             }
         }
