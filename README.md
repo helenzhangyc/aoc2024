@@ -27,3 +27,10 @@ For part 2, don't enable at the start of each line. Debugged this for a while...
 - `std::sregex_iterator` iterates through all matches in the input regex
 - `std::smatch` stores the results of a regex match
 - The matched parts can be accessed using array-like indexing. A capturing group is defined using `()` in a regex pattern. Each set of parentheses creates a group that captures the part of the string matched by that section of the pattern. For instance, in `R"(mul\((\d+),(\d+)\))"` with the input string `mul(123,456)`, `match[0]` would be the entire string `mul(123,456)`, `match[1]` would be `123` and `match[2]` would be `456`. Note that `\(` and `\)` are literal parentheses, not capturing group.
+
+#### Day 4
+**Topics:** 2D Array
+
+**Difficulty:** 3/10
+
+Just search for every possibility. For some reason I think part 2 is easier than part 1
