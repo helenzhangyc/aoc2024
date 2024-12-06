@@ -47,3 +47,12 @@ Not sure if there's a more efficient solution but the brute force solution is pr
 For part 2, we need to re-order the page numbers if the order is incorrect. Given only the relative orders between pages, we need to do a topological sort for each incorrect page number list. \
 Runtime is $O(n + E)$ using Kahn's Algorithm, where $n$ is the length of the page number list (vertices) and $E$ is the number of edges. \
 This part requires more knowledge in algorithm so I gave it a 6/10.
+
+#### Day 6
+**Topics:** Graph
+
+**Difficulty:** Part 1: 3/10, Part 2: 5/10
+
+Part 1 is easy, just simulate the guard and mark all the visited positions as X until the guard exits the map. Count number of X in the graph at the end.
+
+For part 2, we need to notice that the guard is entering a loop if and only if it visits the same location with the same direction. By figuring out this, we just need to store the guard's state as a combination of position and orientation in a hashmap and check if this state has already been encountered by the guard before everytime the guard makes a move.
