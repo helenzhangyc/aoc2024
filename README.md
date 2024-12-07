@@ -56,3 +56,10 @@ This part requires more knowledge in algorithm so I gave it a 6/10.
 Part 1 is easy, just simulate the guard and mark all the visited positions as X until the guard exits the map. Count number of X in the graph at the end.
 
 For part 2, we need to notice that the guard is entering a loop if and only if it visits the same location with the same direction. By figuring out this, we just need to store the guard's state as a combination of position and orientation in a hashmap and check if this state has already been encountered by the guard before everytime the guard makes a move.
+
+#### Day 7
+**Topics:** Backtracking
+
+**Difficulty:** 6/10
+
+Just perform backtracking on all possible combinations. At first I thought it's evaluating using the human way (* first, and then +), so I just used javascript `eval()`, that wasted some time until I realized you are supposed to evaluating from left to right
