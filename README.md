@@ -63,3 +63,10 @@ For part 2, we need to notice that the guard is entering a loop if and only if i
 **Difficulty:** 6/10
 
 Just perform backtracking on all possible combinations. At first I thought it's evaluating using the human way (* first, and then +), so I just used javascript `eval()`, that wasted some time until I realized you are supposed to evaluating from left to right
+
+#### Day 8
+**Topics:** 2D Array
+
+**Difficulty:** 4/10
+
+Easy day, got confused by the antinode coordinate calculation for a sec
