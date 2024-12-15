@@ -77,3 +77,10 @@ Easy day, got confused by the antinode coordinate calculation for a sec
 **Difficulty:** Part 1: 4/10, Part 2: 7/10
 
 For Part 1, simulate the process by making . as -1 and move the file blocks. At first, did the same thing for part 2 but then it becomes very annoying to simulate and debug. Got inspired by https://github.com/mquig42/AdventOfCode2024/blob/main/src/day09.cpp and finished the question, so I will give it a 7/10.
+
+#### Day 10
+**Topics:** BFS
+
+**Difficulty:** 3/10
+
+Standard and simple BFS
