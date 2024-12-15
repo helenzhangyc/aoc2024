@@ -84,3 +84,11 @@ For Part 1, simulate the process by making . as -1 and move the file blocks. At 
 **Difficulty:** 3/10
 
 Standard and simple BFS
+
+#### Day 11
+**Topics:** Simulation
+
+**Difficulty:** Part 1: 2/10, Part 2: 5/10
+
+Part 1 is easy, just follow the question instruction and do the simulation. \
+For part 2, following the same way as part 1 would take forever to run. We need to realize that the position of stone does not matter. Therefore, we can store stones in a hashmap where keys are the stone, and values are the frequencies of the stone.
