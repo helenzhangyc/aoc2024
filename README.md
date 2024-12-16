@@ -92,3 +92,10 @@ Standard and simple BFS
 
 Part 1 is easy, just follow the question instruction and do the simulation. \
 For part 2, following the same way as part 1 would take forever to run. We need to realize that the position of stone does not matter. Therefore, we can store stones in a hashmap where keys are the stone, and values are the frequencies of the stone.
+
+#### Day 12
+**Topics:** BFS
+
+**Difficulty:** Part 1: 5/10
+
+Need to realize that for each cell, it contributes to `4 - (# of adjacent cells that has the same type as the current cell)` in the perimeter.
