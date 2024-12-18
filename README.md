@@ -96,6 +96,7 @@ For part 2, following the same way as part 1 would take forever to run. We need 
 #### Day 12
 **Topics:** BFS
 
-**Difficulty:** Part 1: 5/10
+**Difficulty:** Part 1: 5/10, Part 2: 8/10
 
-Need to realize that for each cell, it contributes to `4 - (# of adjacent cells that has the same type as the current cell)` in the perimeter.
+For part 1, need to realize that for each cell, it contributes to `4 - (# of adjacent cells that has the same type as the current cell)` in the perimeter. \
+For part 2, need to realize that the number of sides is just the number of corners. But it's really tedious to count corners in a brute force way so I gave it an 8/10.
