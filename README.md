@@ -100,3 +100,10 @@ For part 2, following the same way as part 1 would take forever to run. We need 
 
 For part 1, need to realize that for each cell, it contributes to `4 - (# of adjacent cells that has the same type as the current cell)` in the perimeter. \
 For part 2, need to realize that the number of sides is just the number of corners. But it's really tedious to count corners in a brute force way so I gave it an 8/10.
+
+#### Day 13
+**Topics:** Simple Math
+
+**Difficulty:** Part 1: 3/10
+
+Since each button would need to be pressed no more than 100 times to win the prize, we can just brute force all the possibilities of button press.
